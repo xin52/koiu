@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telphone=no, email=no" >
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="fonts/iconfont.css">
+	<script>
+      document.documentElement.style.fontSize=window.innerWidth/320*50+"px";
+	</script>
+</head>
+<body>
+	<div class="wrap" id="app">
+		<header class="header">
+			<a href="javascript:;"><img src="img/1.jpg" alt=""></a>
+			<a href="javascript:;">消息</a>
+			<a href="javascript:;">＋</a>
+		</header>
+		<div class="scroll">
+			<div class="top">
+				<input type="text" placeholder="搜索">
+				<i class="icon iconfont">&#xe62f;</i>
+			</div>
+			<div class="long" v-for="item in arr">
+				<dl>
+					<dt><img :src="item.src" alt=""></dt>
+					<dd>
+						<h3>{{item.hs}}<span>{{item.time}}</span></h3>
+						<p><b>{{item.b}}</b>{{item.content}}</p>
+					</dd>
+				</dl>
+				<!-- <dl>
+					<dt><img src="img/2.jpg" alt=""></dt>
+					<dd>
+						<h3>QQ看点<span>下午2:08</span></h3>
+						<p><b>[精选]</b>来了好多人看北极的风景</p>
+					</dd>
+				</dl> -->
+			</div>
+		</div>
+		<footer class="footer">
+			<a href="javascript:;"><i class="icon iconfont">&#xe620;</i>消息</a>
+			<a href="javascript:;"><i class="icon iconfont">&#xe62c;</i>联系人</a>
+			<a href="javascript:;"><i class="icon iconfont">&#xe629;</i>动态</a>
+		</footer>
+	</div>
+	<script src="js/vue.min.js"></script>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+      var vm=new Vue({
+      	el:"#app",
+      	data:{
+      		arr:[
+      		/*{
+              src:"img/2.jpg",
+              hs:"QQ看点",
+              time:"下午2:08",
+              b:"[精选]",
+              content:"来了好多人看北极的风景",
+           },
+           {
+              src:"img/3.jpg",
+              hs:"群助手",
+              time:"下午2:85",
+              b:"[1个群有新消息]",
+              
+           },
+           {
+              src:"img/3.jpg",
+              hs:"张丽",
+              time:"下午3:02",
+              
+              content:"吃了吗",
+           },
+           {
+              src:"img/4.jpg",
+              hs:"李经理",
+              time:"下午3:15",
+              
+              content:"工作完成了吗？",
+           },
+            {
+              src:"img/2.jpg",
+              hs:"煎熬就",
+              time:"下午4:12",
+              
+              content:"干嘛呢",
+           },
+           {
+              src:"img/4.jpg",
+              hs:"积极",
+              time:"下午4:14",
+              
+              content:"看开点",
+           },
+           {
+              src:"img/3.jpg",
+              hs:"几句话",
+              time:"下午4:34",
+              
+              content:"克咳片",
+           }
+*/
+      		]
+      	},
+      	created:function(){
+
+      		 $.ajax({
+          	url:'http://localhost:8030/index',
+          	method:'GET',
+          	success:function(datas){
+          		console.log(datas)
+               vm.arr=datas;
+               
+          	}
+
+          })
+
+      	}
+      })
+  
+	</script>
+</body>
+</html>
