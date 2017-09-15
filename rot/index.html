@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telphone=no, email=no" >
+	<link type='text/css' rel="stylesheet" href="src/css/common.css">
+	<link type='text/css' rel="stylesheet" href="src/css/reset.css">
+    <link type='text/css' rel="stylesheet" href="src/css/style.css">
+    <link type='text/css' rel="stylesheet" href="src/fonts/iconfont.css">
+     <script>
+      document.documentElement.style.fontSize=window.innerWidth/320*50+"px"
+     </script>
+</head>
+<body>
+	<div id="app" class="wrap">
+		<header class="header">
+			<a href="javascript:;"><i class="icon iconfont">&#xe652;</i></a>
+			<a href="javascript:;"><input type="text" placeholder="谷歌|圣诞节"></a>
+			<a href="javascript:;"><i class="icon iconfont">&#xe653;</i></a>
+			<a href="javascript:;"><i class="icon iconfont">&#xe659;</i></a>
+		</header>
+       	<div class="scroll">
+			<router-view></router-view>
+		</div>
+        <footer class="footer">
+        <router-link to="/shou" tag="div"><i class="icon iconfont">&#xe660;</i>首页</router-link>
+	  	<router-link to="/mine" tag="div"><i class="icon iconfont">&#xe65f;</i>我的</router-link>
+	  	<router-link to="/bao" tag="div"><i class="icon iconfont">&#xe65e;</i>包子</router-link>
+	  	<router-link to="/find" tag="div"><i class="icon iconfont">&#xe65c;</i>发现</router-link>
+
+
+        </footer>
+
+
+	</div>
+</body>
+</html>
